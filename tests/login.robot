@@ -1,0 +1,16 @@
+*** Settings ***
+
+Documentation    Testes de Login
+Resource         ../resources/base.resource
+
+Test Setup       Start session
+Test Teardown    Finish session
+
+*** Test Cases ***
+
+Deve logar com sucesso
+    Fazer login
+    
+    Wait Until Page Contains    Minhas tarefas    5
+
+    Close Application    
